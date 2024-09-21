@@ -1,4 +1,5 @@
 package com.RedSocial.publicaciones.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 //Anotaciones lombok
@@ -19,6 +20,7 @@ public class Profile {
     @Column (name= "Avatar")
     private String avatar;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "profile")
+
     private User user;
 }
