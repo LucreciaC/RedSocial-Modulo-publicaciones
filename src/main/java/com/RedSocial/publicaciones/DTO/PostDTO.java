@@ -23,4 +23,6 @@ public class PostDTO {
     private LocalDateTime fechaCreacion;
 
     private Long userId;
+
+    private int likes;
 }

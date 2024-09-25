@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 //Anotaciones lombok
 @Setter
@@ -25,4 +27,13 @@ public class Post {
     @JoinColumn(name = "usuario_id")
     @JsonIgnore
     private User user;
+
+    @ManyToMany
+    @JoinTable(
+            name = "publicaciones_likes",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<User> likes = new HashSet<>();
+
 }

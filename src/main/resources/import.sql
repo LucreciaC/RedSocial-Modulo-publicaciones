@@ -23,3 +23,7 @@ INSERT INTO usuario_seguidores (usuario_id, seguidor_id) VALUES (2, 1); -- Jane 
 INSERT INTO usuario_seguidores (usuario_id, seguidor_id) VALUES (3, 1); -- Alice Johnson sigue a John Doe
 INSERT INTO usuario_seguidores (usuario_id, seguidor_id) VALUES (4, 2); -- Bob Brown sigue a Jane Smith
 INSERT INTO usuario_seguidores (usuario_id, seguidor_id) VALUES (1, 3); -- John Doe sigue a Alice Johnson
+
+INSERT INTO publicaciones_likes (user_id, post_id) VALUES (1, 1); -- John Doe da like a su propia publicación
+INSERT INTO publicaciones_likes (user_id, post_id) VALUES (2, 1); -- Jane Smith da like a la publicación de John Doe
+INSERT INTO publicaciones_likes (user_id, post_id) VALUES (3, 2); -- Alice Johnson da like a la publicación de Jane Smith

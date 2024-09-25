@@ -35,6 +35,7 @@ public class UserController {
                     .post(user.getPost())
                     .seguidores(user.getSeguidores())
                     .siguiendo(user.getSiguiendo())
+                    .likedPosts(user.getLikedPosts().size())
                     .build();
 
             return ResponseEntity.ok(userDTO);
@@ -55,6 +56,7 @@ public class UserController {
                         .post(user.getPost())
                         .seguidores(user.getSeguidores())
                         .siguiendo(user.getSiguiendo())
+                        .likedPosts(user.getLikedPosts().size())
                         .build())
                 .toList();
 

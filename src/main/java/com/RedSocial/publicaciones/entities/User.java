@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,5 +45,10 @@ public class User {
     @ManyToMany(mappedBy = "seguidores")
     @JsonIgnore
     private Set<User> siguiendo;
+
+    // Nueva relación Many-to-Many con Post (likes)
+    @ManyToMany(mappedBy = "likes")
+    @JsonIgnore
+    private Set<Post> likedPosts = new HashSet<>();
 
 }

@@ -32,6 +32,7 @@ public class PostController {
                     .contenido(post.getContenido())
                     .fechaCreacion(post.getFechaCreacion())
                     .userId(post.getUser().getId())  // Aquí asumimos que necesitas el ID del usuario
+                    .likes(post.getLikes().size())
                     .build();
             return ResponseEntity.ok(postDTO);
         }
@@ -45,7 +46,8 @@ public class PostController {
                         .id(post.getId())
                         .contenido(post.getContenido())
                         .fechaCreacion(post.getFechaCreacion())
-                        .userId(post.getUser().getId())  // Aquí asumimos que necesitas el ID del usuario
+                        .userId(post.getUser().getId())// Aquí asumimos que necesitas el ID del usuario
+                        .likes(post.getLikes().size())
                         .build())
                 .collect(Collectors.toList());
 

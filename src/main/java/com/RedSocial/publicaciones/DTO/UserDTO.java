@@ -31,4 +31,6 @@ public class UserDTO {
 
     private Set<User> siguiendo;
 
+    private int likedPosts;
+
 }
